@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic Registration Module</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    #registration-form {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+
+<button onclick="showRegistrationForm()">Register</button>
+
+<div id="registration-form">
+  <h2>Registration Form</h2>
+  <form id="signup-form" onsubmit="return registerUser()">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="email">Email ID:</label>
+    <input type="email" id="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" required>
+
+    <button type="submit">Register</button>
+  </form>
+</div>
+
+<script>
+  function showRegistrationForm() {
+    document.getElementById('registration-form').style.display = 'block';
+  }
+
+  function registerUser() {
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var phone = document.getElementById('phone').value;
+
+    // Perform email verification and registration process
+    // (In a real-world scenario, this would be done server-side)
+
+    // For simplicity, just display a confirmation message here
+    alert('Registration successful! Please check your email for activation.');
+
+    // You can also implement sending a verification email here (requires server-side functionality)
+
+    // Clear the form
+    document.getElementById('signup-form').reset();
+
+    // Hide the registration form
+    document.getElementById('registration-form').style.display = 'none';
+
+    return false; // Prevent form submission (for demonstration purposes)
+  }
+</script>
+
+</body>
+</html>
